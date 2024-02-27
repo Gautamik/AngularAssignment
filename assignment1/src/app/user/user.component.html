@@ -1,0 +1,20 @@
+<div>
+    <h2>User Information</h2>
+    <p class="user-name">Name: {{ user.name }}</p>
+    <p class="user-email">Email: {{ user.email }}</p>
+    <button (click)="editUser()">Edit</button>
+    <hr>
+    <label for="changeName">Change Name:</label>
+    <input type="text" id="changeName" [(ngModel)]="newName" name="newName" required pattern="[a-zA-Z ]*">
+    <div *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)">
+        <div *ngIf="nameInput.errors?.required">Name is required</div>
+        <div *ngIf="nameInput.errors?.pattern">Invalid characters</div>
+    </div>
+    <p>New Name: {{ newName }}</p>
+    <div>
+        <button #detailsButton (click)="toggleDetails()">Toggle Details</button>
+        <div *ngIf="showDetails">
+            <!-- Additional user details go here -->
+        </div>
+    </div>
+</div>

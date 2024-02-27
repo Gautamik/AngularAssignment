@@ -1,0 +1,9 @@
+.user-name {
+    font-weight: bold;
+    color:Blue; /* Change color as needed */
+}
+
+.user-email {
+    font-style: italic;
+    color: green; /* Change color as needed */
+}
